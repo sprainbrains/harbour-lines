@@ -58,8 +58,8 @@ OTHER_FILES += \
     qml/common/styles/ball/*.svg \
     qml/common/styles/shape/*.svg \
     qml/meego/images/*.svg \
-    rpm/harbour-lines.changes \
-    rpm/harbour-lines.spec \
+    rpm/org.monich.harbour.lines.changes \
+    rpm/org.monich.harbour.lines.spec \
     translations/*.ts \
     qtc_packaging/debian_harmattan/rules \
     qtc_packaging/debian_harmattan/README \

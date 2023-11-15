@@ -2,3 +2,8 @@ build
 harbour-lines.pro.user
 meego-lines.pro.user
 translations/*.qm
+*.o
+moc*.cpp
+harbour-lines.pro
+harbour-lines.desktop
+Makefile
