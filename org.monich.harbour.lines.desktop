@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Name=Lines
+Name[ru]=Шарики
+Icon=org.monich.harbour.lines
+Exec=org.monich.harbour.lines
+
+
+[X-Application]
+Permissions=
+OrganizationName=org.monich
+ApplicationName=harbour.lines

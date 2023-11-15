@@ -1,4 +1,4 @@
-Name:       harbour-lines
+Name:       org.monich.harbour.lines
 Summary:    Lines game
 Version:    1.0.9
 Release:    1
@@ -6,7 +6,6 @@ Group:      Amusements/Games
 License:    BSD
 URL:        http://github.com/monich/harbour-lines
 Source0:    %{name}-%{version}.tar.bz2
-
 Requires:      sailfishsilica-qt5 >= 0.10.9
 Requires:      qt5-qtsvg-plugin-imageformat-svg
 BuildRequires: pkgconfig(glib-2.0) >= 2.32
@@ -17,6 +16,7 @@ BuildRequires: pkgconfig(Qt5Qml)
 BuildRequires: pkgconfig(mlite5)
 BuildRequires: desktop-file-utils
 BuildRequires: qt5-qttools-linguist
+BuildRequires: librsvg-tools
 
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
@@ -29,7 +29,7 @@ Lines game for Sailfish OS
 %setup -q -n %{name}-%{version}
 
 %build
-%qtc_qmake5 harbour-lines.pro
+%qtc_qmake5 org.monich.harbour.lines.pro
 %qtc_make %{?_smp_mflags}
 
 %install
@@ -39,6 +39,15 @@ rm -rf %{buildroot}
 desktop-file-install --delete-original \
   --dir %{buildroot}%{_datadir}/applications \
    %{buildroot}%{_datadir}/applications/*.desktop
+
+
+for size in 86 108 128 172
+do
+   mkdir -p %{buildroot}%{_datadir}/icons/hicolor/${size}x${size}/apps/
+   rsvg-convert --width=$size --height=$size --output \
+           %{buildroot}%{_datadir}/icons/hicolor/${size}x${size}/apps/%{name}.png \
+          %{_sourcedir}/../icons/harbour-lines.svg
+done
 
 %files
 %defattr(-,root,root,-)
