@@ -7,3 +7,4 @@ moc*.cpp
 harbour-lines.pro
 harbour-lines.desktop
 Makefile
+RPMS/*.*
