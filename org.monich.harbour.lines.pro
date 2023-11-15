@@ -1,6 +1,6 @@
 TARGET = org.monich.harbour.lines
 CONFIG += link_pkgconfig
-CONFIG += sailfishapp
+CONFIG += auroraapp
 PKGCONFIG += glib-2.0 mlite5
 QMAKE_CXXFLAGS += -Wno-unused-parameter -Wno-psabi
 QT += qml quick

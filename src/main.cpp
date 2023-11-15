@@ -50,11 +50,11 @@
 
 #ifdef HARMATTAN
 #include "MeegoLines.h"
-#define SailfishApp MeegoApp
+#define Aurora::Application MeegoApp
 #define QQuickView MeegoView
 #define MAIN_QML "qml/meego/main.qml"
 #else
-#include <sailfishapp.h>
+#include <auroraapp.h>
 #include "HarbourImageProvider.h"
 #include "HarbourTheme.h"
 #define loadTranslations(translator,locale,filename,prefix,directory) \
@@ -68,12 +68,12 @@
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-    QCoreApplication* app = SailfishApp::application(argc, argv);
+    QCoreApplication* app = Aurora::Application::application(argc, argv);
 
     // Load translations
     QLocale locale;
     QTranslator* translator = new QTranslator(app);
-    QString transDir = SailfishApp::pathTo("translations").toLocalFile();
+    QString transDir = Aurora::Application::pathTo("translations").toLocalFile();
     QString transFile(LINES_APP);
     if (loadTranslations(translator, locale, transFile, "-", transDir) ||
         translator->load(transFile, transDir)) {
@@ -90,7 +90,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     REGISTER(QuickScoresModel, "ScoresModel");
     REGISTER(LinesPrefs, "LinesPrefs");
 
-    QQuickView *view = SailfishApp::createView();
+    QQuickView *view = Aurora::Application::createView();
 
 #ifndef HARMATTAN
     QQmlContext* context = view->rootContext();
@@ -102,7 +102,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     REGISTER_SINGLETON(HarbourTheme, "HarbourTheme");
 #endif
 
-    view->setSource(SailfishApp::pathTo(MAIN_QML));
+    view->setSource(Aurora::Application::pathTo(MAIN_QML));
     view->show();
 
     int result = app->exec();

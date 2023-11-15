@@ -1,15 +1,15 @@
 Name:       org.monich.harbour.lines
 Summary:    Lines game
-Version:    1.0.9
+Version:    1.0.10
 Release:    1
 Group:      Amusements/Games
 License:    BSD
-URL:        http://github.com/monich/harbour-lines
+URL:        https://github.com/sprainbrains/harbour-lines/tree/auroraos
 Source0:    %{name}-%{version}.tar.bz2
 Requires:      sailfishsilica-qt5 >= 0.10.9
 Requires:      qt5-qtsvg-plugin-imageformat-svg
 BuildRequires: pkgconfig(glib-2.0) >= 2.32
-BuildRequires: pkgconfig(sailfishapp) >= 1.0.2
+BuildRequires: pkgconfig(auroraapp) >= 1.0.2
 BuildRequires: pkgconfig(Qt5Quick)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Qml)
@@ -58,6 +58,10 @@ done
 %exclude %{_datadir}/%{name}/qml/meego
 
 %changelog
+
+* Thu Nov 15 2023 Nikolay Sinyov <nikolay.sinyov@gmail.com> 1.0.10
+- Aurora OS adaptation
+
 * Sun Feb 21 2021 Slava Monich <slava.monich@jolla.com> 1.0.9
 - Chinese translation
 
