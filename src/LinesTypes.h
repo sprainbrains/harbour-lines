@@ -39,9 +39,10 @@
 #ifdef HARMATTAN
 #  define LINES_APP     "meego-lines"
 #else
-#  define LINES_APP     "harbour-lines"
+#  define LINES_APP     "harbour.lines"
 #endif
 #define LINES_PLUGIN    "harbour.lines"
+#define LINES_SUBNAME   "org.monich"
 
 #if QT_VERSION >= 0x050000
 #include <QStandardPaths>
@@ -51,14 +52,14 @@ inline QString linesDataDir()
 {
     return QStandardPaths::writableLocation(
          QStandardPaths::GenericDataLocation) +
-         QStringLiteral("/" LINES_APP "/");
+         QStringLiteral("/" LINES_SUBNAME "/" LINES_APP "/");
 }
 #else
 #include <QtDeclarative>
 #define QStringLiteral(s) QLatin1String(s)
 inline QString linesDataDir()
 {
-    return QDir::homePath() + QLatin1String("/.config/" LINES_APP "/");
+    return QDir::homePath() + QLatin1String("/.config/" LINES_SUBNAME "/" LINES_APP "/");
 }
 #endif
 

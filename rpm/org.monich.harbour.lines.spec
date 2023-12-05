@@ -1,6 +1,6 @@
 Name:       org.monich.harbour.lines
 Summary:    Lines game
-Version:    1.0.10
+Version:    1.0.11
 Release:    1
 Group:      Amusements/Games
 License:    BSD
@@ -59,7 +59,10 @@ done
 
 %changelog
 
-* Thu Nov 15 2023 Nikolay Sinyov <nikolay.sinyov@gmail.com> 1.0.10
+* Tue Dec 5 2023 Nikolay Sinyov <nikolay.sinyov@gmail.com> 1.0.11
+- Fixed datadir path for AuroraOS
+
+* Wed Nov 15 2023 Nikolay Sinyov <nikolay.sinyov@gmail.com> 1.0.10
 - Aurora OS adaptation
 
 * Sun Feb 21 2021 Slava Monich <slava.monich@jolla.com> 1.0.9
